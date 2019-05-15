@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>:: Seahi Hotel ::</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+    <div class="site-navbar-wrap js-site-navbar bg-white">
+      
+      <div class="container">
+        <div class="site-navbar bg-light">
+          <div class="py-1">
+            <div class="row align-items-center">
+                <div class="col-2">
+                    <h2 class="mb-0 site-logo"><a href="contact.html">SeaHi Hotel</a></h2>
+                  </div>
+              <div class="col-10">
+                <nav class="site-navigation text-right" role="navigation">
+                  <div class="container">
+                    <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
+                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+                        <li>
+                            <a href="index.html">메인</a>
+                          </li>
+                          <li class="has-children">
+                            <a href="rooms.html">객실</a>
+                            <ul class="dropdown arrow-top">
+                              <li><a href="Standard.html">스탠다드 룸</a></li>
+                              <li><a href="Suite.html">스위트 룸</a></li>
+                              <li><a href="Vip.html">VIP 룸</a></li>
+                              <li><a href="Facilities.html">부대시설</a></li>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a href="Service.html">서비스</a></li>
+                          <li><a href="about.html">호텔 소개</a></li>
+                          <li class="active"><a href="contact.html">찾아오시는길</a></li>
+                          <li  class="active"><a href="contact.html">한글(Kor)</a></li>
+                          <li><a href="contact_en.html">영어(Eng)</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <span class="caption mb-3">오시는길</span>
+              <h1 class="mb-4">way to come</h1>
+            </div>
+          </div>
+        </div>
+      </div>  
+    <div class="site-section site-section-sm">
+      <div class="container">
+        <div class="row">
+
+            <div class="container">
+                <div class="about-heading-content">
+                <div class="row">
+                  <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <div class="section-heading text-left">
+                            <h2 class="mb-5">찾아오시는길</h2>
+                        </div>
+                      <div id="map" style="width:100%;height:350px;"></div>
+                      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=51d010b936804bddbce26186578f3c03"></script>
+                      <script>
+                      var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                          mapOption = { 
+                              center: new daum.maps.LatLng(37.342444, 126.687389), // 지도의 중심좌표
+                              level: 3 // 지도의 확대 레벨
+                          };
+                      
+                      var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                      
+                      // 지도를 표시하는 div 크기를 변경하는 함수입니다
+                      function resizeMap() {
+                          var mapContainer = document.getElementById('map');
+                          mapContainer.style.width = '650px';
+                          mapContainer.style.height = '650px'; 
+                      }
+                      
+                      function relayout() {    
+                          
+                          // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+                          // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
+                          // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+                          map.relayout();
+                      }
+                      var markerPosition  = new daum.maps.LatLng(37.34218313089727,126.68677537058511);
+                          // 마커를 생성합니다
+                          var marker = new daum.maps.Marker({
+                              position: markerPosition
+                          });
+                
+                          // 마커가 지도 위에 표시되도록 설정합니다
+                          marker.setMap(map);
+                      </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="col-lg-4">
+            <div class="p-4 mb-3 bg-white">
+              <h3 class="h5 text-black mb-3">연락처 정보</h3>
+              <p class="mb-0 font-weight-bold">주소</p>
+              <p class="mb-4"> 경기도 시흥시 정왕동 2031-20</p>
+
+              <p class="mb-0 font-weight-bold">연락처</p>
+              <p class="mb-4">031-319-0078 &amp; 031-319-6942</p>
+
+              <p class="mb-0 font-weight-bold">Fax</p>
+              <p class="mb-4">031-319-6945</p>
+
+              <p class="mb-0 font-weight-bold">이메일 주소</p>
+              <p class="mb-0"><a href="mailto:hotelseahi@naver.com">hotelseahi@naver.com</a></p>
+
+            </div>
+            
+            
+          </div>
+
+          <div class="col-lg-4">
+              <div class="p-4 mb-3 bg-white">
+                <h3 class="h5 text-black mb-3">교통편</h3>
+                <p class="mb-0 font-weight-bold">대중교통 (오이도역 4호선 → 씨하이호텔) </p>
+                <ul>
+                <li><p class="mb-4"><br>일반버스 30-2(오이도역) → 함상전망대 정류장 하차</p>
+                <span  style="color:red" > 약 37분(도보 8분) | 1,250원</span></li>
+                <li><p class="mb-4"><br>62(오이도역) → 일반버스 63(배곧한신더휴.호반더프라임) → 함상전망대 정류장 하차</p>
+                <span  style="color:red" > 약 40분(도보 8분) | 1,250원</span></li>
+                <li><p class="mb-4"><br>오이도역(4번출구) → 일반버스 25(정왕역환승센터) → 함상전망대 정류장 하차</p>
+                <span  style="color:red" > 약 46분(도보 6분) | 1,350원</span></li>
+                <li><p class="mb-4"><br>99-3(오이도역) → 일반버스 63(한라비발디1차) → 함상전망대 정류장 하차</p>
+                <span  style="color:red" > 약 38분(도보 7분) | 1,250원</span></li>
+                <li><p class="mb-4"><br>11-A(오이도역) → 일반버스 63(한신.호반3차아파트) → 함상전망대 정류장 하차</p>
+                <span  style="color:red" > 약 43분(도보 9분) | 1,250원</span></li>
+                </ul>
+              </div>
+              
+              
+            </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    
+    <footer class="site-footer">
+        <div class="container">
+          
+  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                    <h3 class="footer-heading mb-4 text-white">빠른메뉴</h3>
+                    <ul class="list-unstyled">
+                      <li><a href="rooms.html">객실</a></li>
+                      <li><a href="Service.html">서비스</a></li>
+                      <li><a href="about.html">호텔 소개</a></li>
+                      <li><a href="contact.html">찾아오시는길</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                  <h3 class="footer-heading mb-4 text-white">연락처 정보</h3>
+                    <ul class="list-unstyled">
+                      <li><span class="icon icon-map-marker"></span><span class="text"> 경기도 시흥시 정왕동 2031-20</span></li>
+                      <li><span class="icon icon-phone"></span><span class="text"> 031-319-0078 &amp; 031-319-6942</span></li>
+                      <li><span class="icon icon-fax"></span><span class="text"> 031-319-6945</span></a></li>
+                      <li><a href="mailto:hotelseahi@naver.com"><span class="icon icon-envelope"></span><span class="text"> hotelseahi@naver.com</span></a></li>
+                      <li><span class="icon icon-clock-o"></span><span class="text"> 평일,주말 24시간 운영</span></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+  
+            
+            <div class="col-md-2">
+              <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">SNS</h3></div>
+                <div class="col-md-12">
+                  <p>
+                    <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                    <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                    <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+                    <a href="#" class="p-2"><span class="icon-"></span></a>
+  
+                  </p>
+                </div>
+            </div>
+          </div>
+          <div class="row pt-5 mt-5 text-center">
+            <div class="col-md-12">
+              <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  
+  <script src="js/mediaelement-and-player.min.js"></script>
+
+  <script src="js/main.js"></script>
+    
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+                var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+                for (var i = 0; i < total; i++) {
+                    new MediaElementPlayer(mediaElements[i], {
+                        pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
+                        shimScriptAccess: 'always',
+                        success: function () {
+                            var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                            for (var j = 0; j < targetTotal; j++) {
+                                target[j].style.visibility = 'visible';
+                            }
+                  }
+                });
+                }
+            });
+    </script>
+
+  </body>
+</html>
