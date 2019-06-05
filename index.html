@@ -36,39 +36,42 @@
 
     <link rel="stylesheet" href="/css/style.css">
    
-     <script>
-      
-                 jQuery(document).ready(function($) {
-                pevent();
-            });
-
-            function pevent(){
-                function getCookie(name){
-                    var nameOfCookie = name + "=";
-                    var x = 0;
-                    while (x <= document.cookie.length){
-                        var y = (x + nameOfCookie.length);
-                        if (document.cookie.substring(x, y) == nameOfCookie){
-                        if ((endOfCookie = document.cookie.indexOf(";", y)) == -1){
-                        endOfCookie = document.cookie.length;
-                        }
-                        return unescape (document.cookie.substring(y, endOfCookie));
-                        }
-                        x = document.cookie.indexOf (" ", x) + 1;
-                        if (x == 0) break;
-                    }
-                    return "";
-                }
-                if (getCookie("popname") != "done"){
-                    var popUrl = "/pop1";
-                    var popOption = "width=400%, height=235%, resizable=no, scrollbars=no, status=no;";
-                    window.open(popUrl,"",popOption);
-                }
-            }
-      </script>
+    <script language="Javascript"> 
+<!-- 
+function setCookie( name, value, expiredays ) { 
+    var todayDate = new Date(); 
+        todayDate.setDate( todayDate.getDate() + expiredays ); 
+        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+    }
+function closeWin() { 
+    if ( document.notice_form.chkbox.checked ){ 
+        setCookie( "maindiv", "done" , 1 ); 
+    } 
+    document.all['divpop'].style.visibility = "hidden"; 
+} 
+//-->  
+</script> 
     
   </head>
-  <body>
+  <body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <!-- POPUP --> 
+<div id="divpop" style="position:absolute;left:395px;top:190px;z-index:200;visibility:hidden;"> 
+<table width=300 height=400 cellpadding=2 cellspacing=0> 
+<tr> 
+    <td style="border:1px #666666 solid" height=360 align=center bgcolor=white> 
+    여기에 내용 삽입 
+    </td> 
+</tr> 
+<tr> 
+        <form name="notice_form"> 
+    <td align=right bgcolor=white> 
+        <input type="checkbox" name="chkbox" value="checkbox">오늘 하루 이 창을 열지 않음 
+        <a href="javascript:closeWin();"><B>[닫기]</B></a> 
+    </td> 
+</tr> 
+        </form> 
+</table> 
+</div> 
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -390,20 +393,16 @@
   <script src="/js/mediaelement-and-player.min.js"></script>
 
   <script src="/js/main.js"></script>
-   <script>
-     function setCookie(name, value, expiredays){
-    var todayDate = new Date();
-        todayDate.setDate (todayDate.getDate() + expiredays);
-        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
-    }
- 
-    function closePop(){
-        if (document.frm.pop.checked){
-        setCookie("popname", "done", 1);
-    }
-    self.close();
-}
-  </script>
+
+<script language="Javascript"> 
+cookiedata = document.cookie;    
+if ( cookiedata.indexOf("maindiv=done") < 0 ){      
+    document.all['divpop'].style.visibility = "visible"; 
+    } 
+    else { 
+        document.all['divpop'].style.visibility = "hidden"; 
+} 
+</script>
   
   <script>
       document.addEventListener('DOMContentLoaded', function() {
