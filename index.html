@@ -36,34 +36,42 @@
 
     <link rel="stylesheet" href="/css/style.css">
     
-    <script language="JavaScript"> 
+   <script language="Javascript"> 
+<!-- 
+function setCookie( name, value, expiredays ) { 
+    var todayDate = new Date(); 
+        todayDate.setDate( todayDate.getDate() + expiredays ); 
+        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+    }
 function closeWin() { 
     if ( document.notice_form.chkbox.checked ){ 
         setCookie( "maindiv", "done" , 1 ); 
     } 
     document.all['divpop'].style.visibility = "hidden"; 
 } 
+//-->  
 </script> 
-
-<!-- POPUP --> 
-<div id="divpop" style="position:absolute;left:100px;top:50px;z-index:200;visibility:hidden;"> 
-<table border=0> 
-<tr> 
-        <td><img src=popup/popup_080121.jpg></td> 
-</tr> 
-<tr> 
-<form name="notice_form"> 
-    <td bgcolor=#aac5e0 align=center bgcolor=white><br> 
-        <input type="checkbox" name="chkbox" value="checkbox">오늘 하루 이 창을 열지 않음 
-        <a href="javascript:closeWin();"><B>[닫기]</B></a>< br><br> 
-    </td></form> 
-</tr> 
-</table> 
-</div>
-    
   </head>
-  <body>
-    
+  <body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    본문내용
+<!-- POPUP --> 
+<div id="divpop" style="position:absolute;left:395px;top:190px;z-index:200;visibility:hidden;"> 
+<table width=300 height=400 cellpadding=2 cellspacing=0> 
+<tr> 
+    <td style="border:1px #666666 solid" height=360 align=center bgcolor=white> 
+    여기에 내용 삽입 
+    </td> 
+</tr> 
+<tr> 
+        <form name="notice_form"> 
+    <td align=right bgcolor=white> 
+        <input type="checkbox" name="chkbox" value="checkbox">오늘 하루 이 창을 열지 않음 
+        <a href="javascript:closeWin();"><B>[닫기]</B></a> 
+    </td> 
+</tr> 
+        </form> 
+</table> 
+</div> 
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -387,14 +395,14 @@ function closeWin() {
   <script src="/js/main.js"></script>
 
 <script language="Javascript"> 
-cookiedata = document.cookie; 
-if ( cookiedata.indexOf("maindiv=done") < 0 ){ 
+cookiedata = document.cookie;    
+if ( cookiedata.indexOf("maindiv=done") < 0 ){      
     document.all['divpop'].style.visibility = "visible"; 
     } 
     else { 
         document.all['divpop'].style.visibility = "hidden"; 
 } 
-</script> 
+</script>
   
   <script>
       document.addEventListener('DOMContentLoaded', function() {
