@@ -38,14 +38,56 @@
    
      <script language="javascript">
       
-      function pop(){ 
-      window.open( "/images/reservation.JPG", "pop", "width=400,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
-      }
-      
+     jQuery(document).ready(function($) {
+    pevent();
+});
+ 
+function pevent(){
+    function getCookie(name){
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x <= document.cookie.length){
+            var y = (x + nameOfCookie.length);
+            if (document.cookie.substring(x, y) == nameOfCookie){
+            if ((endOfCookie = document.cookie.indexOf(";", y)) == -1){
+            endOfCookie = document.cookie.length;
+            }
+            return unescape (document.cookie.substring(y, endOfCookie));
+            }
+            x = document.cookie.indexOf (" ", x) + 1;
+            if (x == 0) break;
+        }
+        return "";
+    }
+    if (getCookie("popname") != "done"){
+        var popUrl = "/pop1";
+        var popOption = "width=400%, height=235%, resizable=no, scrollbars=no, status=no;";
+        window.open(popUrl,"",popOption);
+    }
+}
       </script>
     
   </head>
-  <body onload="javascript:pop()">
+  <body>
+    <table width="" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td><img src="/images/reservation.JPG" width="100%" height="100%" border="0"></td>
+  </tr>
+  <tr>
+    <td height="30" align="right" bgcolor="#000000">
+    <table border="0" cellpadding="0" cellspacing="2">
+      <form name="frm" method="post" action=""></form>
+        <tbody><tr>
+         <td><input class="PopupCheck" type="checkbox" name="pop" onclick="closePop()"></td>
+         <td style="font-size:11px;color:#FFFFFF;">1일동안 이 창을 열지 않음</td>
+            <td style="font-size:11px;"><a href="javascript:self.close();" onfocus="this.blur()">[닫기]</a></td>
+        </tr>
+       
+    </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -367,7 +409,20 @@
   <script src="/js/mediaelement-and-player.min.js"></script>
 
   <script src="/js/main.js"></script>
-    
+   <script>
+     function setCookie(name, value, expiredays){
+    var todayDate = new Date();
+        todayDate.setDate (todayDate.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+    }
+ 
+    function closePop(){
+        if (document.frm.pop.checked){
+        setCookie("popname", "done", 1);
+    }
+    self.close();
+}
+  </script>
   
   <script>
       document.addEventListener('DOMContentLoaded', function() {
