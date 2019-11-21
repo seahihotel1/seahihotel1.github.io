@@ -1,34 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script language="JavaScript">
+    function setCookie(name, value, expiredays) {
+        var date = new Date();
+        date.setDate(date.getDate() + expiredays);
+        document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+    }
 
-<table width="" border="0" cellpadding="0" cellspacing="0">
-  <tbody><tr>
-    <td><img src="/images/reservation.JPG" width="769" height="581" border="0"></td>
-  </tr>
-  <tr>
-    <td height="30" align="right" bgcolor="#000000">
-    <table border="0" cellpadding="0" cellspacing="2">
-      <form name="frm" method="post" action=""></form>
-        <tbody><tr>
-         <td><input class="PopupCheck" type="checkbox" name="pop" onclick="closePop()"></td>
-         <td style="font-size:11px;color:#FFFFFF;">1일동안 이 창을 열지 않음</td>
-            <td style="font-size:11px;"><a href="javascript:self.close();" onfocus="this.blur()">[닫기]</a></td>
-        </tr>
-       
-    </tbody></table>
-    </td>
-  </tr>
-</tbody></table>
-<script type="text/javascript">
- function setCookie(name, value, expiredays){
-    var todayDate = new Date();
-        todayDate.setDate (todayDate.getDate() + expiredays);
-        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+    function closePopup() {
+        if (document.getElementById("check").value) {
+            setCookie("popupYN", "N", 1);
+            self.close();
+        }
     }
- 
-    function closePop(){
-        if (document.pop.checked){
-        setCookie("popname", "done", 1);
-    }
-    self.close();
-}
 </script>
-
+</head>
+<body>
+    <input type="checkbox" id="check" onclick="closePopup();">
+    <br />
+    <fontsize=3> <b>하루에 한번만 보기</b> </font>
+</body>
+</html>
