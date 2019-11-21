@@ -1,21 +1,4 @@
-<table width="" border="0" cellpadding="0" cellspacing="0">
-  <tbody><tr>
-    <td><img src="/images/reservation.JPG" width="769" height="581" border="0"></td>
-  </tr>
-  <tr>
-    <td height="30" align="right" bgcolor="#000000">
-    <table border="0" cellpadding="0" cellspacing="2">
-      <form name="frm" method="post" action=""></form>
-        <tbody><tr>
-         <td><input class="PopupCheck" type="checkbox" name="popname" onclick="closePop()"></td>
-         <td style="font-size:11px;color:#FFFFFF;">1일동안 이 창을 열지 않음</td>
-            <td style="font-size:11px;"><a href="javascript:self.close();" onfocus="this.blur()">[닫기]</a></td>
-        </tr>
-       
-    </tbody></table>
-    </td>
-  </tr>
-</tbody></table>
+<script>
  function setCookie(name, value, expiredays){
     var todayDate = new Date();
         todayDate.setDate (todayDate.getDate() + expiredays);
@@ -28,4 +11,24 @@
     }
     self.close();
 }
+</script>
+<table width="" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td><img src="/images/reservation.JPG" width="769" height="581" border="0"></td>
+  </tr>
+  <tr>
+    <td height="30" align="right" bgcolor="#000000">
+    <table border="0" cellpadding="0" cellspacing="2">
+      <form name="frm" method="post" action=""></form>
+        <tbody><tr>
+         <td><input class="PopupCheck" type="checkbox" name="pop" onclick="closePop()"></td>
+         <td style="font-size:11px;color:#FFFFFF;">1일동안 이 창을 열지 않음</td>
+            <td style="font-size:11px;"><a href="javascript:self.close();" onfocus="this.blur()">[닫기]</a></td>
+        </tr>
+       
+    </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
 
