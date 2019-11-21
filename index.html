@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="http://code.jquery.com/jquery-latest.js"></script> 
-<script language="JavaScript">
-    <!--
-        function setCookie( name, value, expiredays ) {
-            var todayDate = new Date();
-            todayDate.setDate( todayDate.getDate() + expiredays ); 
-            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-        }
-        function closePop() {
-            if ( document.pop_form.chkbox.checked ){
-                setCookie( "maindiv", "done" , 1 );
-            }
-            document.all['layer_popup'].style.visibility = "hidden";
-        }
-    //--> 
-</script>
     <title>:: 오이도 씨하이 호텔 ::</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -52,9 +36,7 @@
 
     <link rel="stylesheet" href="/css/style.css">
     
-    
-    <div id="layer_popup" style="visibility: visible;">
- 
+  
       <script language="javascript">
       
       function pop(){ 
@@ -62,24 +44,6 @@
       }
       
       </script>
- 
-    <div class="close">
-        <form name="pop_form">
-            <div id="check"><input type="checkbox" name="chkbox" value="checkbox" style="margin-right:5px;">오늘 하루동안 보지 않기</div>
-            <div id="close" style="margin:auto;"><a href="javascript:closePop();">닫기</a></div>
-        </form>
-    </div>
-</div>
-<script language="Javascript">
-    cookiedata = document.cookie;   
-    if ( cookiedata.indexOf("maindiv=done") < 0 ){     
-        document.all['layer_popup'].style.visibility = "visible";
-    }
-    else {
-        document.all['layer_popup'].style.visibility = "hidden";
-    }
-</script>
-
    
   </head>
   <body onload="javascript:pop()">
