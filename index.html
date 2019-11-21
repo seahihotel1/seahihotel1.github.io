@@ -36,7 +36,8 @@
 
     <link rel="stylesheet" href="/css/style.css">
     
-  
+ 
+
       <script language="javascript">
       
       function pop(){ 
@@ -44,7 +45,16 @@
       }
       
       </script>
+    <div id="div_laypopup" align="center" style="display:none;border-width:0px;Z-INDEX: 201; POSITION: absolute;left:528px; top:640px;">  
+    <input type="checkbox" name="close" value="OK" onclick="javascript:closeWin('div_laypopup', 1);"/>하루동안 이 창을 열지 않음  
+    <!-- <input type="checkbox" name="close" value="OK" onclick="javascript:closeWinAt00('div_laypopup', 1);"/>오늘만 이 창을 열지 않음 -->  
+ </div>  
    
+ <script type="text/javascript">  
+ <!--  
+    openWin('div_laypopup');  
+ -->  
+ </script>  
   </head>
   <body onload="javascript:pop()">
 
